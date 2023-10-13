@@ -36,6 +36,12 @@ spec:
                   name: service-urls
                   key: HOST_3002
                   optional: true
+            - name: HOST_3003
+              valueFrom:
+                configMapKeyRef:
+                  name: service-urls
+                  key: HOST_3003
+                  optional: true
             - name: HOST_81
               valueFrom:
                 configMapKeyRef:

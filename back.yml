@@ -33,6 +33,11 @@ spec:
                 configMapKeyRef:
                   name: service-urls
                   key: RMQ_URI
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: service-urls
+                  key: JWT_SECRET
 
 ---
 apiVersion: apps/v1
@@ -85,6 +90,11 @@ spec:
                 configMapKeyRef:
                   name: service-urls
                   key: RMQ_URI
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: service-urls
+                  key: JWT_SECRET
 
 ---
 apiVersion: apps/v1
@@ -166,6 +176,11 @@ spec:
                 configMapKeyRef:
                   name: service-urls
                   key: RMQ_URI
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: service-urls
+                  key: JWT_SECRET
 
 ---
 apiVersion: v1
