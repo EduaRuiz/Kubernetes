@@ -1,0 +1,32 @@
+﻿apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-urls
+data:
+  RMQ_USERNAME: root
+  RMQ_PASSWORD: password
+  RMQ_URI: "amqp://root:password@rabbit-service:5672"
+
+  MONGO_USERNAME: root
+  MONGO_PASSWORD: password
+  MONGO_DATABASE: inventory
+  MONGO_URI: "mongodb://root:password@mongo-service:27017/inventory?authSource=admin"
+
+  POSTGRES_HOST: postgres-service
+  POSTGRES_PORT: "5432"
+  POSTGRES_USERNAME: root
+  POSTGRES_PASSWORD: password
+  POSTGRES_DATABASE: inventory
+  POSTGRES_URI: "postgresql://postgres-service:5432/inventory"
+  POSTGRES_DATABASES: inventory,auth
+  POSTGRES_HOST_AUTH: postgres-service
+  POSTGRES_PORT_AUTH: "5432"
+  POSTGRES_USERNAME_AUTH: root
+  POSTGRES_PASSWORD_AUTH: password
+  POSTGRES_DATABASE_AUTH: auth
+  POSTGRES_URI_AUTH: "postgresql://postgres-service:5432/auth"
+
+  COMMAND_URI: "command.app"
+  QUERY_URI: "query.app"
+  PROXY_URI: "proxy.app"
+  AUTH_URI: "auth.app"

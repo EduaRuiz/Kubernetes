@@ -1,0 +1,35 @@
+﻿minikube start --vm-driver=hyperv --memory=3072 --hyperv-static-ip=172.25.83.113
+minikube addons enable ingress
+minikube addons enable ingress-dns
+minikube addons disable ingress-dns
+minikube addons list
+
+
+kubectl delete -f mongo.yml
+kubectl delete -f postgres.yml
+kubectl delete -f rabbit.yml
+kubectl delete -f config.yml
+kubectl delete -f back.yml
+kubectl delete -f back.ingress.yml
+kubectl delete -f front.yml
+
+kubectl delete pods --all --grace-period=0 --force
+kubectl delete pvc --all --grace-period=0 --force
+kubectl delete pv --all --grace-period=0 --force
+
+
+kubectl delete deployment --all --grace-period=0 --force
+kubectl delete statefulsets --all --grace-period=0 --force
+kubectl delete svc --all --grace-period=0 --force
+
+kubectl apply -f config.yml
+kubectl apply -f mongo.yml
+kubectl apply -f postgres.yml
+kubectl apply -f rabbit.yml
+kubectl apply -f back.yml
+kubectl apply -f back.ingress.yml
+kubectl apply -f front.yml
+
+kubectl get pods
+kubectl get pv
+kubectl get pvs
