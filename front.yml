@@ -15,6 +15,7 @@ spec:
       containers:
         - name: front-app
           image: eduarandres/front-app:latest
+          # image: julian362/inventory-front:latest
           ports:
             - containerPort: 4200
           env:
@@ -40,7 +41,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: service-urls
-                  key: HOST_3003
+                  key: AUTH_URI
                   optional: true
             - name: HOST_81
               valueFrom:
